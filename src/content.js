@@ -54,6 +54,18 @@ export const content = {
     ],
   },
 
+  // ---------- Photos of her ----------
+  you: {
+    title: 'Through my eyes',
+    subtitle: 'My favourite photos of you.',
+    photos: [
+      { caption: 'A messy photo of you..', photo: 'photos/7.svg' },
+      { caption: 'You, just existing.', photo: 'photos/8.svg' },
+      { caption: 'The photo of you that melts my heart.', photo: 'photos/9.svg' },
+    ],
+    message: 'I could fill a hundred of these.',
+  },
+
   // ---------- Flower garden ----------
   garden: {
     title: 'Tap the ground',

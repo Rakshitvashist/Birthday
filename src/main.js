@@ -8,6 +8,7 @@ import { mountLock } from './sections/lock.js';
 import { mountIntro } from './sections/intro.js';
 import { mountLetter } from './sections/letter.js';
 import { mountTimeline } from './sections/timeline.js';
+import { mountYou } from './sections/you.js';
 import { mountGarden } from './sections/garden.js';
 import { mountReasons } from './sections/reasons.js';
 import { mountBouquet } from './sections/bouquet.js';
@@ -86,6 +87,7 @@ async function boot() {
   const intro = mountIntro(app, content);
   mountLetter(app, content);
   mountTimeline(app, content);
+  mountYou(app, content);
   mountGarden(app, content);
   mountReasons(app, content);
   mountBouquet(app, content);

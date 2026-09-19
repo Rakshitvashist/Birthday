@@ -1,3 +1,20 @@
+/* ---------- photos of her ---------- */
+.you .you-stack { display: flex; flex-direction: column; gap: 54px; align-items: center; margin-top: 16px; }
+.you .you-card {
+  position: relative; width: min(100%, 320px); padding: 14px 14px 22px; background: #fdfcf8; border-radius: 4px;
+  box-shadow: 0 28px 60px rgba(0,0,0,0.55); transform: rotate(var(--tilt)); margin: 0;
+}
+.you .you-card .tape {
+  position: absolute; top: -12px; left: 50%; width: 92px; height: 26px; transform: translateX(-50%) rotate(-3deg);
+  background: rgba(255, 214, 150, 0.7); box-shadow: 0 2px 6px rgba(0,0,0,0.2); opacity: 0.9;
+  mask-image: linear-gradient(90deg, transparent 0, #000 6px, #000 calc(100% - 6px), transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6px, #000 calc(100% - 6px), transparent 100%);
+}
+.you .you-frame { aspect-ratio: 4 / 5; overflow: hidden; background: #eee; }
+.you .you-frame img { width: 100%; height: 100%; object-fit: cover; }
+.you figcaption { font-family: var(--hand); color: #2a1a20; font-size: 1.55rem; line-height: 1.2; margin-top: 14px; text-align: center; }
+.you .you-message { font-family: var(--hand); font-size: 1.9rem; color: var(--rose-2); margin-top: 40px; opacity: 0; }
+
 /* ---------- garden ---------- */
 .garden .field {
   position: relative; width: 100%; max-width: 560px; height: 440px; margin: 0 auto; border-radius: 22px; overflow: hidden;
