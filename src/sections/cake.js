@@ -130,6 +130,6 @@ export function mountCake(host, content) {
 
   // Gentle flame wobble when the section is in view, and prompt for the mic once.
   ScrollTrigger.create({ trigger: section, start: 'top 60%', once: true, onEnter: () => {
-    gsap.from(section.querySelectorAll('.candle-group'), { y: 20, opacity: 0, stagger: 0.08, duration: 0.6 });
+    gsap.fromTo(section.querySelectorAll('.candle-group'), { y: 20, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.08, duration: 0.6, overwrite: 'auto' });
   } });
 }

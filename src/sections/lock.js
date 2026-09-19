@@ -39,7 +39,8 @@ export function mountLock(host, content) {
       input.classList.remove('shake');
       void input.offsetWidth; // restart the animation
       input.classList.add('shake');
-      input.select();
+      input.value = "";
+      input.focus({ preventScroll: true });
     });
     setTimeout(() => input.focus({ preventScroll: true }), 1600);
   });
