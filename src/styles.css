@@ -147,7 +147,9 @@ p.lead { color: var(--ink-dim); font-size: 1.02rem; max-width: 44ch; margin: 0 a
   content: ''; position: absolute; top: -40px; right: -40px; width: 160px; height: 160px; border-radius: 50%;
   background: radial-gradient(circle, rgba(255, 107, 157, 0.25), transparent 70%);
 }
-.letter p { font-family: var(--serif); font-size: 1.28rem; line-height: 1.55; margin-bottom: 1.1em; min-height: 1.55em; }
+.letter p { font-family: var(--serif); font-size: 1.28rem; line-height: 1.55; margin-bottom: 1.1em; }
+.letter p:empty { display: none; }
+.letter p b { font-weight: 600; color: var(--rose-2); }
 .letter .cursor { display: inline-block; width: 2px; height: 1.1em; background: var(--rose); vertical-align: -0.2em; margin-left: 2px; animation: blink 0.9s steps(2) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
 .letter .sig { font-family: var(--hand); font-size: 1.7rem; color: var(--rose-2); text-align: right; opacity: 0; margin-top: 6px; }

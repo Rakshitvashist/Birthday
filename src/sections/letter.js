@@ -32,14 +32,20 @@ export function mountLetter(host, content) {
     cursor.className = 'cursor';
     for (let i = 0; i < paras.length; i++) {
       const p = paras[i];
-      const text = c.paragraphs[i];
       p.appendChild(cursor);
-      for (const ch of text) {
-        cursor.insertAdjacentText('beforebegin', ch);
-        const pause = fast ? 4 : /[.!?]/.test(ch) ? 200 : ch === ',' ? 110 : ch === ' ' ? 22 : 18 + Math.random() * 26;
-        await new Promise((r) => setTimeout(r, pause));
+      // **bold** parts are typed inside <b>
+      const segments = c.paragraphs[i].split(/(\*\*[^*]+\*\*)/).filter(Boolean).map((s) =>
+        s.startsWith('**') ? { text: s.slice(2, -2), bold: true } : { text: s, bold: false });
+      for (const seg of segments) {
+        const node = seg.bold ? document.createElement('b') : document.createTextNode('');
+        cursor.before(node);
+        for (const ch of seg.text) {
+          node.textContent += ch;
+          const pause = fast ? 3 : /[.!?]/.test(ch) ? 170 : ch === ',' ? 90 : ch === ' ' ? 16 : 14 + Math.random() * 20;
+          await new Promise((r) => setTimeout(r, pause));
+        }
       }
-      await new Promise((r) => setTimeout(r, fast ? 80 : 450));
+      await new Promise((r) => setTimeout(r, fast ? 60 : 380));
     }
     cursor.remove();
     gsap.to(sig, { opacity: 1, y: 0, duration: 1.2, ease: 'power2.out' });
