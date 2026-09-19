@@ -69,6 +69,50 @@ function textTargets(n, text, width) {
   return out;
 }
 
+// Sample a photo into particle positions and colours, masked to a soft oval portrait.
+function photoTargets(n, src, width, crop) {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.onload = () => {
+      // crop = { x, y, w, h } as fractions of the image; defaults to the whole photo
+      const cr = crop || { x: 0, y: 0, w: 1, h: 1 };
+      const sx = img.naturalWidth * cr.x, sy = img.naturalHeight * cr.y;
+      const sw = img.naturalWidth * cr.w, sh = img.naturalHeight * cr.h;
+      const aspect = sh / sw;
+      const cw = 110, ch = Math.round(cw * aspect);
+      const c = document.createElement('canvas');
+      c.width = cw; c.height = ch;
+      const g = c.getContext('2d');
+      g.drawImage(img, sx, sy, sw, sh, 0, 0, cw, ch);
+      const data = g.getImageData(0, 0, cw, ch).data;
+      const pts = [];
+      for (let y = 0; y < ch; y++) {
+        for (let x = 0; x < cw; x++) {
+          const nx = (x - cw / 2) / (cw / 2), ny = (y - ch / 2) / (ch / 2);
+          if (nx * nx + ny * ny > 1) continue; // oval mask
+          const k = (y * cw + x) * 4;
+          pts.push(x, y, data[k] / 255, data[k + 1] / 255, data[k + 2] / 255);
+        }
+      }
+      const pos = new Float32Array(n * 3), col = new Float32Array(n * 3);
+      const scale = width / cw;
+      const total = pts.length / 5;
+      for (let i = 0; i < n; i++) {
+        const j = Math.floor((i / n) * total) * 5;
+        pos[i * 3] = (pts[j] - cw / 2) * scale + (Math.random() - 0.5) * scale * 0.6;
+        pos[i * 3 + 1] = (ch / 2 - pts[j + 1]) * scale + (Math.random() - 0.5) * scale * 0.6;
+        pos[i * 3 + 2] = (Math.random() - 0.5) * 0.8;
+        col[i * 3] = pts[j + 2];
+        col[i * 3 + 1] = pts[j + 3];
+        col[i * 3 + 2] = pts[j + 4];
+      }
+      resolve({ pos, col });
+    };
+    img.onerror = () => resolve(null);
+    img.src = src;
+  });
+}
+
 function scatterTargets(n, spread) {
   const out = new Float32Array(n * 3);
   for (let i = 0; i < n; i++) {
@@ -107,6 +151,8 @@ export function mountIntro(host, content) {
     const cc = r < 0.55 ? rose : r < 0.85 ? gold : white;
     col[i * 3] = cc.r; col[i * 3 + 1] = cc.g; col[i * 3 + 2] = cc.b;
   }
+  const baseCol = Float32Array.from(col);
+  let colTarget = baseCol;
   geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
   geo.setAttribute('color', new THREE.BufferAttribute(col, 3));
   const mat = new THREE.PointsMaterial({
@@ -148,6 +194,9 @@ export function mountIntro(host, content) {
       }
     }
     geo.attributes.position.needsUpdate = true;
+    const cl = geo.attributes.color.array;
+    for (let i = 0; i < cl.length; i++) cl[i] += (colTarget[i] - cl[i]) * 0.06;
+    geo.attributes.color.needsUpdate = true;
     scene.rotation.y = Math.sin(t * 0.25) * 0.08;
     renderer.render(scene, camera);
     raf = requestAnimationFrame(frame);
@@ -172,7 +221,17 @@ export function mountIntro(host, content) {
     geo.attributes.position.array.set(target);
     running = true; frame();
     gsap.to(mat, { opacity: 0.9, duration: 1.4 });
+    const photo = c.photo ? await photoTargets(COUNT, c.photo, Math.min(w * 0.7, 18), c.photoCrop) : null;
     await wait(900);
+    if (photo) {
+      // her face, painted in particles: solid dots with true colours, then back to glowing sparks
+      target = photo.pos; colTarget = photo.col;
+      await wait(700);
+      mat.blending = THREE.NormalBlending; mat.size = 0.4; mat.opacity = 1; mat.needsUpdate = true;
+      await wait(3800);
+      mat.blending = THREE.AdditiveBlending; mat.size = 0.22; mat.opacity = 0.9; mat.needsUpdate = true;
+      colTarget = baseCol;
+    }
     target = heartTargets(COUNT, Math.min(w * 0.82, 24));
     await wait(3200);
     target = textTargets(COUNT, c.lines[1], Math.min(w * 0.94, 30));

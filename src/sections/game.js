@@ -1,9 +1,10 @@
 import confetti from 'canvas-confetti';
+import { photos as library } from '../media.js';
 
 // "Catch our memories": polaroids fall, she taps them. Reaching the target unlocks the rest.
 export function mountGame(host, content, onWin) {
   const c = content.game;
-  const photos = content.timeline.events.map((e) => e.photo);
+  const photos = library.map((p) => p.thumb);
   const section = document.createElement('section');
   section.className = 'section game';
   section.innerHTML = `

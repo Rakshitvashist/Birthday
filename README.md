@@ -23,6 +23,20 @@ Live: https://rakshitvashist.github.io/Birthday/
 15. **The ending** – countdown, the question, the runaway "No", and a video message after Yes.
 16. **Wish jar** – she writes a wish, it drops into the jar and is kept on her phone for next year.
 
+## Adding photos and videos
+
+1. Drop photos into `Image/` and videos into `Video/` (any names, any sizes).
+2. Run `npm run media`. It resizes photos for phones, makes thumbnails, copies videos,
+   and writes `src/media.json`. Then run `npm run posters` to make a cover image for each video.
+3. Every media section (stories, mosaic, gallery, game, corkboard, photo rain) updates by itself.
+   Sections that show a specific photo (intro face, timeline, "Through my eyes", scratch card)
+   name the photo in `src/content.js`, e.g. `media/photos/p15.jpg`. Ids follow file order.
+4. To caption a photo or video, add `"caption": "..."` to its entry in `src/media.json`.
+   Captions survive re-runs of the script.
+
+Keep the total under ~500 MB. Long videos are better on YouTube (unlisted) and pasted into
+`ending.video`.
+
 ## Make it hers
 
 1. **Edit `src/content.js`.** Every word on the site lives there: her name, dates,

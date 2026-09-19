@@ -1,5 +1,6 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { photos, shuffled } from '../media.js';
 
 // Corkboard of polaroids she can drag around.
 export function mountWall(host, content) {
@@ -19,10 +20,11 @@ export function mountWall(host, content) {
 
   function place() {
     const W = board.clientWidth, H = board.clientHeight;
-    content.timeline.events.forEach((e, i) => {
+    const picks = shuffled(photos, 11).slice(0, 8);
+    picks.forEach((ph, i) => {
       const p = document.createElement('div');
       p.className = 'polaroid';
-      p.innerHTML = `<i class="pin"></i><img src="${e.photo}" alt="${e.title}" draggable="false" /><span>${e.title}</span>`;
+      p.innerHTML = `<i class="pin"></i><img src="${ph.thumb}" alt="" draggable="false" /><span>${ph.caption || ['us', 'you', 'that day', 'this one', 'my favourite', 'always', 'again', 'forever'][i]}</span>`;
       const x = 12 + Math.random() * Math.max(10, W - 170);
       const y = 12 + Math.random() * Math.max(10, H - 210);
       const rot = (Math.random() - 0.5) * 22;

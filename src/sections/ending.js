@@ -1,5 +1,23 @@
 import { gsap } from 'gsap';
 import confetti from 'canvas-confetti';
+import { photos, shuffled } from '../media.js';
+
+// Little photos of her raining down the whole screen.
+function photoRain() {
+  const host = document.createElement('div');
+  host.className = 'photo-rain';
+  document.body.appendChild(host);
+  const list = shuffled(photos, 3);
+  list.concat(list).slice(0, 40).forEach((p, i) => {
+    const img = document.createElement('img');
+    img.src = p.thumb;
+    img.style.left = Math.random() * 100 + 'vw';
+    host.appendChild(img);
+    gsap.fromTo(img, { y: 0, rotation: (Math.random() - 0.5) * 60, opacity: 1 },
+      { y: window.innerHeight + 260, rotation: (Math.random() - 0.5) * 240, duration: 3 + Math.random() * 2, delay: i * 0.12, ease: 'power1.in', onComplete: () => img.remove() });
+  });
+  setTimeout(() => host.remove(), 12000);
+}
 
 // Final message, countdown to the next time you meet, the question with a runaway "No",
 // and a video message that plays after she says yes.
@@ -95,6 +113,7 @@ export function mountEnding(host, content) {
         shapes: ['circle'], colors: ['#ff6b9d', '#ffb3c9', '#e9c46a', '#ffffff'], scalar: 1.2 });
       if (Date.now() < end) requestAnimationFrame(rain);
     })();
+    photoRain();
     showVideo();
   });
 }

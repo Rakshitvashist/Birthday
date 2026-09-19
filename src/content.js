@@ -25,6 +25,10 @@ export const content = {
   intro: {
     lines: ['Happy Birthday', 'Kanishka'],
     subtitle: 'I made this for you.',
+    // The photo her face is painted with in the particle intro. A clear, front-facing portrait works best.
+    photo: 'media/photos/p15.jpg',
+    // Which part of that photo to use, as fractions (left, top, width, height). Frame her face tightly.
+    photoCrop: { x: 0.3, y: 0.02, w: 0.5, h: 0.96 },
   },
 
   // ---------- The letter ----------
@@ -45,12 +49,12 @@ export const content = {
   timeline: {
     title: 'Our story so far',
     events: [
-      { date: '16 May 2026', title: 'The day we met', caption: 'You spilled coffee on my notes and apologised for five minutes straight.', photo: 'photos/1.svg' },
-      { date: '02 Jun 2026', title: 'First date', caption: 'We talked so long the restaurant had to ask us to leave.', photo: 'photos/2.svg' },
-      { date: '19 Jun 2026', title: 'First trip together', caption: 'You got us lost on purpose. I still think it was on purpose.', photo: 'photos/3.svg' },
-      { date: '14 Jul 2026', title: 'The rainy evening', caption: 'One umbrella. Both of us soaked anyway.', photo: 'photos/4.svg' },
-      { date: '30 Aug 2026', title: 'That late-night call', caption: 'Four hours. Neither of us wanted to hang up first.', photo: 'photos/5.svg' },
-      { date: 'Today', title: 'And now this', caption: 'Another year of you. Lucky me.', photo: 'photos/6.svg' },
+      { date: '16 May 2026', title: 'The day we met', caption: 'You spilled coffee on my notes and apologised for five minutes straight.', photo: 'media/photos/p10.jpg' },
+      { date: '02 Jun 2026', title: 'First date', caption: 'We talked so long the restaurant had to ask us to leave.', photo: 'media/photos/p16.jpg' },
+      { date: '19 Jun 2026', title: 'First trip together', caption: 'You got us lost on purpose. I still think it was on purpose.', photo: 'media/photos/p07.jpg' },
+      { date: '14 Jul 2026', title: 'The rainy evening', caption: 'One umbrella. Both of us soaked anyway.', photo: 'media/photos/p22.jpg' },
+      { date: '30 Aug 2026', title: 'That late-night call', caption: 'Four hours. Neither of us wanted to hang up first.', photo: 'media/photos/p23.jpg' },
+      { date: 'Today', title: 'And now this', caption: 'Another year of you. Lucky me.', photo: 'media/photos/p27.jpg' },
     ],
   },
 
@@ -59,11 +63,34 @@ export const content = {
     title: 'Through my eyes',
     subtitle: 'My favourite photos of you.',
     photos: [
-      { caption: 'A messy photo of you..', photo: 'photos/7.svg' },
-      { caption: 'You, just existing.', photo: 'photos/8.svg' },
-      { caption: 'The photo of you that melts my heart.', photo: 'photos/9.svg' },
+      { caption: 'A messy photo of you..', photo: 'media/photos/p08.jpg' },
+      { caption: 'You, just existing.', photo: 'media/photos/p25.jpg' },
+      { caption: 'The photo of you that melts my heart.', photo: 'media/photos/p14.jpg' },
     ],
     message: 'I could fill a hundred of these.',
+  },
+
+  // ---------- Stories (all photos + videos, Instagram style) ----------
+  stories: {
+    title: 'Our story, the long version',
+    subtitle: 'Tap to move forward. Hold to pause.',
+    label: 'kanishka & rakshit',
+    videoEvery: 3,        // a video after every N photos
+    secondsPerPhoto: 4.5,
+    endMessage: 'And we are only getting started.',
+  },
+
+  // ---------- Photo mosaic ----------
+  mosaic: {
+    title: 'All of you',
+    subtitle: 'Tap any tile.',
+    message: '{n} photos. One heart.',
+  },
+
+  // ---------- Full gallery ----------
+  gallery: {
+    title: 'Everything',
+    subtitle: '{p} photos, {v} videos, zero regrets.',
   },
 
   // ---------- Flower garden ----------
@@ -142,7 +169,7 @@ export const content = {
     hint: 'Rub it with your finger.',
     revealTitle: 'Surprise 🎟️',
     revealText: 'We are going away for the weekend. Pack a bag. Don\'t ask where.',
-    photo: 'photos/3.svg',
+    photo: 'media/photos/p03.jpg',
   },
 
   // ---------- Polaroid wall ----------
@@ -198,6 +225,6 @@ export const content = {
   share: {
     title: 'For Kanishka 💌',
     description: 'Open me on your birthday.',
-    image: 'photos/1.svg',
+    image: 'media/photos/p27.jpg',
   },
 };

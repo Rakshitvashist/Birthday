@@ -1,5 +1,6 @@
 import './styles.css';
 import './styles-features.css';
+import './styles-media.css';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { content } from './content.js';
@@ -9,7 +10,10 @@ import { mountIntro } from './sections/intro.js';
 import { mountLetter } from './sections/letter.js';
 import { mountTimeline } from './sections/timeline.js';
 import { mountYou } from './sections/you.js';
+import { mountStories } from './sections/stories.js';
 import { mountGarden } from './sections/garden.js';
+import { mountMosaic } from './sections/mosaic.js';
+import { mountGallery } from './sections/gallery.js';
 import { mountReasons } from './sections/reasons.js';
 import { mountBouquet } from './sections/bouquet.js';
 import { mountCake } from './sections/cake.js';
@@ -88,8 +92,10 @@ async function boot() {
   mountLetter(app, content);
   mountTimeline(app, content);
   mountYou(app, content);
+  mountStories(app, content);
   mountGarden(app, content);
   mountReasons(app, content);
+  mountMosaic(app, content);
   mountBouquet(app, content);
   mountCake(app, content);
   mountBalloons(app, content);
@@ -104,6 +110,7 @@ async function boot() {
   app.appendChild(afterGame);
   mountSky(afterGame, content);
   mountScratch(afterGame, content);
+  mountGallery(afterGame, content);
   mountWall(afterGame, content);
   mountFireworks(afterGame, content);
   mountEnding(afterGame, content);

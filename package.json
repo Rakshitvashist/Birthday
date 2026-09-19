@@ -6,9 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "media": "node scripts/media.mjs",
+    "posters": "node scripts/posters.mjs"
   },
   "devDependencies": {
+    "puppeteer-core": "^25.11.0",
+    "sharp": "^0.35.4",
     "vite": "^8.3.0"
   },
   "dependencies": {
