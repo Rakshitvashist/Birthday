@@ -17,7 +17,7 @@ export const content = {
     wrongMessages: [
       'Nope. You know this one 😌',
       'Try again, my love.',
-      'Hint: Citrus Iced Tea, Third Wave.',
+      'Hint: it was raining that day.',
     ],
   },
 
