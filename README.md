@@ -35,13 +35,13 @@ A cinematic, scroll-driven birthday website. Open it on a phone.
 ```bash
 git add -A
 git commit -m "Make it hers"
-gh repo create for-her --public --source=. --push     # or create the repo on github.com and push
+gh repo create Birthday --public --source=. --push     # or create the repo on github.com and push
 ```
 
 Then on GitHub: **Settings → Pages → Source: GitHub Actions**. The workflow in
 `.github/workflows/deploy.yml` builds and publishes on every push to `main`.
 
-Your link will be `https://<your-username>.github.io/for-her/`.
+Your link will be `https://<your-username>.github.io/Birthday/`.
 
 Want it private-ish? Keep the repo public (Pages needs it on free plans) but the
 lock screen means only she can get past the first screen.
@@ -50,6 +50,6 @@ lock screen means only she can get past the first screen.
 
 - The **microphone** only works over HTTPS (GitHub Pages is HTTPS) or on localhost.
 - **WhatsApp preview**: set `share.image` in `content.js` to a full URL
-  (e.g. `https://<user>.github.io/for-her/photos/1.jpg`) once deployed.
+  (e.g. `https://<user>.github.io/Birthday/photos/1.jpg`) once deployed.
 - **Custom domain** (optional): buy one, add a `CNAME` file in `public/` and set it in Pages settings.
 - Send her the link at midnight. Trust me.
