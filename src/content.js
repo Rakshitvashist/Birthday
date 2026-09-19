@@ -11,7 +11,7 @@ export const content = {
   // ---------- Lock screen ----------
   lock: {
     question: 'Enter the date we first met',
-    hint: 'Mera farewell. Rajiv Chowk. Light purple top. (DD-MM-YYYY)',
+    hint: 'Think of the day at the coffee shop… (DD-MM-YYYY)',
     // Accepted answers. Any of these unlocks the site. Keep them lowercase.
     answers: ['16-05-2026', '16/05/2026', '16052026'],
     wrongMessages: [
