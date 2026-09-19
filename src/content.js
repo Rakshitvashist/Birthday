@@ -46,12 +46,20 @@ export const content = {
     title: 'Our story so far',
     events: [
       { date: '16 May 2026', title: 'The day we met', caption: 'You spilled coffee on my notes and apologised for five minutes straight.', photo: 'photos/1.svg' },
-      { date: '02 Mar 2024', title: 'First date', caption: 'We talked so long the restaurant had to ask us to leave.', photo: 'photos/2.svg' },
-      { date: '19 Apr 2024', title: 'First trip together', caption: 'You got us lost on purpose. I still think it was on purpose.', photo: 'photos/3.svg' },
-      { date: '05 Oct 2024', title: 'Your last birthday', caption: 'The cake was terrible. Your smile was not.', photo: 'photos/4.svg' },
-      { date: '31 Dec 2024', title: 'New Year, together', caption: 'First midnight kiss of many.', photo: 'photos/5.svg' },
+      { date: '02 Jun 2026', title: 'First date', caption: 'We talked so long the restaurant had to ask us to leave.', photo: 'photos/2.svg' },
+      { date: '19 Jun 2026', title: 'First trip together', caption: 'You got us lost on purpose. I still think it was on purpose.', photo: 'photos/3.svg' },
+      { date: '14 Jul 2026', title: 'The rainy evening', caption: 'One umbrella. Both of us soaked anyway.', photo: 'photos/4.svg' },
+      { date: '30 Aug 2026', title: 'That late-night call', caption: 'Four hours. Neither of us wanted to hang up first.', photo: 'photos/5.svg' },
       { date: 'Today', title: 'And now this', caption: 'Another year of you. Lucky me.', photo: 'photos/6.svg' },
     ],
+  },
+
+  // ---------- Flower garden ----------
+  garden: {
+    title: 'Tap the ground',
+    subtitle: 'Something grows wherever you touch.',
+    target: 10,
+    message: 'You make everything grow.',
   },
 
   // ---------- Reasons ----------
@@ -69,6 +77,13 @@ export const content = {
     ],
   },
 
+  // ---------- Bouquet ----------
+  bouquet: {
+    title: 'Build me a bouquet',
+    subtitle: 'Drag the flowers into the wrap, or just tap them.',
+    cardMessage: 'Real ones arrive on your birthday. This one never wilts.',
+  },
+
   // ---------- Cake ----------
   cake: {
     title: 'Make a wish',
@@ -76,6 +91,21 @@ export const content = {
     fallback: 'Or tap the candles',
     candles: 5,
     afterMessage: 'Did you make a wish? Don\'t tell me. Let it come true.',
+  },
+
+  // ---------- Balloons ----------
+  balloons: {
+    title: 'Pop them',
+    subtitle: 'Every balloon is carrying a little note for you.',
+    notes: [
+      'You are the best part of my every day.',
+      'I still get nervous before I see you. In a good way.',
+      'Nobody has ever made me laugh like you do.',
+      'I saved your first message. I read it more than I should.',
+      'You are braver than you think. I see it every day.',
+      'I would choose you in every version of this life.',
+    ],
+    doneMessage: 'That was all of them. For now.',
   },
 
   // ---------- Game ----------
@@ -86,19 +116,34 @@ export const content = {
     // Uses the timeline photos automatically.
   },
 
+  // ---------- Night sky ----------
+  sky: {
+    title: 'Look up',
+    subtitle: 'Every bright star is a day I remember. Tap them all.',
+    message: 'Even the sky knows.',
+    // Uses the timeline events as the stars.
+  },
+
+  // ---------- Scratch card ----------
+  scratch: {
+    title: 'Scratch here',
+    hint: 'Rub it with your finger.',
+    revealTitle: 'Surprise 🎟️',
+    revealText: 'We are going away for the weekend. Pack a bag. Don\'t ask where.',
+    photo: 'photos/3.svg',
+  },
+
   // ---------- Polaroid wall ----------
   wall: {
     title: 'Our wall',
     subtitle: 'Drag them around. They\'re all yours.',
   },
 
-  // ---------- Playlist ----------
-  playlist: {
-    title: 'Songs that sound like us',
-    // Use a Spotify embed URL (Share -> Embed) or a YouTube embed URL.
-    // Spotify example: https://open.spotify.com/embed/playlist/37i9dQZF1DX50QitC6Oqtn
-    // YouTube example: https://www.youtube.com/embed/VIDEO_ID
-    embedUrl: 'https://open.spotify.com/embed/playlist/37i9dQZF1DX50QitC6Oqtn?utm_source=generator&theme=0',
+  // ---------- Fireworks ----------
+  fireworks: {
+    title: 'Light up the city',
+    subtitle: 'Tap the sky. Keep tapping.',
+    finaleMessage: 'Every night sky should have your name on it.',
   },
 
   // ---------- Ending ----------
@@ -110,9 +155,23 @@ export const content = {
     no: 'No',
     // Shown after she taps Yes.
     afterYes: 'I knew it. Happy birthday, my love. ❤️',
+    // Video that plays after she says yes. Put a file in /public/video (e.g. 'video/message.mp4')
+    // or paste a YouTube embed link (https://www.youtube.com/embed/VIDEO_ID). Leave '' to skip.
+    video: '',
+    videoCaption: 'I recorded this for you.',
     // Countdown to the next time you see each other. Leave empty ('') to hide.
     nextMeet: '2026-10-05T18:00:00',
     nextMeetLabel: 'Until I see you',
+  },
+
+  // ---------- Wish jar ----------
+  wishjar: {
+    title: 'The wish jar',
+    subtitle: 'Write a wish. It stays in this jar until next year.',
+    placeholder: 'I wish…',
+    button: 'Drop it in',
+    saved: 'Saved. Come back next birthday and read it again.',
+    shake: 'Tap the jar to read one back.',
   },
 
   // ---------- Audio ----------

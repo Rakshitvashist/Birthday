@@ -1,7 +1,8 @@
 import { gsap } from 'gsap';
 import confetti from 'canvas-confetti';
 
-// Final message, countdown to the next time you meet, and the question with a runaway "No".
+// Final message, countdown to the next time you meet, the question with a runaway "No",
+// and a video message that plays after she says yes.
 export function mountEnding(host, content) {
   const c = content.ending;
   const section = document.createElement('section');
@@ -27,6 +28,10 @@ export function mountEnding(host, content) {
         <button class="btn ghost no">${c.no}</button>
       </div>
       <div class="after-yes">${c.afterYes}</div>
+      <div class="video-wrap" hidden>
+        <p class="eyebrow">${c.videoCaption}</p>
+        <div class="video-frame"></div>
+      </div>
       <p class="footer">Made with too much love, and a little bit of code.</p>
     </div>`;
   host.appendChild(section);
@@ -51,6 +56,8 @@ export function mountEnding(host, content) {
   const no = section.querySelector('.no');
   const yes = section.querySelector('.yes');
   const after = section.querySelector('.after-yes');
+  const videoWrap = section.querySelector('.video-wrap');
+  const videoFrame = section.querySelector('.video-frame');
   let dodges = 0;
   const dodge = () => {
     dodges += 1;
@@ -64,6 +71,19 @@ export function mountEnding(host, content) {
   no.addEventListener('pointerdown', (e) => { e.preventDefault(); dodge(); });
   no.addEventListener('click', (e) => e.preventDefault());
 
+  function showVideo() {
+    if (!c.video) return;
+    if (/youtube\.com|youtu\.be/.test(c.video)) {
+      const url = c.video.includes('/embed/') ? c.video : c.video.replace(/.*(?:v=|youtu\.be\/)([\w-]+).*/, 'https://www.youtube.com/embed/$1');
+      videoFrame.innerHTML = `<iframe src="${url}?autoplay=1&playsinline=1" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="A message for you"></iframe>`;
+    } else {
+      videoFrame.innerHTML = `<video src="${c.video}" controls playsinline autoplay></video>`;
+    }
+    videoWrap.hidden = false;
+    gsap.fromTo(videoWrap, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1, delay: 0.8 });
+    setTimeout(() => videoWrap.scrollIntoView({ behavior: 'smooth', block: 'center' }), 1200);
+  }
+
   yes.addEventListener('click', () => {
     gsap.to(no, { opacity: 0, scale: 0, duration: 0.3 });
     gsap.to(yes, { scale: 1, duration: 0.3 });
@@ -75,5 +95,6 @@ export function mountEnding(host, content) {
         shapes: ['circle'], colors: ['#ff6b9d', '#ffb3c9', '#e9c46a', '#ffffff'], scalar: 1.2 });
       if (Date.now() < end) requestAnimationFrame(rain);
     })();
+    showVideo();
   });
 }

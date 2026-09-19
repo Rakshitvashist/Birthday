@@ -291,7 +291,3 @@ p.lead { color: var(--ink-dim); font-size: 1.02rem; max-width: 44ch; margin: 0 a
   10% { opacity: 0.7; }
   100% { transform: translateY(-110vh) rotate(30deg); opacity: 0; }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-}

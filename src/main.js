@@ -1,4 +1,5 @@
 import './styles.css';
+import './styles-features.css';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { content } from './content.js';
@@ -7,12 +8,18 @@ import { mountLock } from './sections/lock.js';
 import { mountIntro } from './sections/intro.js';
 import { mountLetter } from './sections/letter.js';
 import { mountTimeline } from './sections/timeline.js';
+import { mountGarden } from './sections/garden.js';
 import { mountReasons } from './sections/reasons.js';
+import { mountBouquet } from './sections/bouquet.js';
 import { mountCake } from './sections/cake.js';
+import { mountBalloons } from './sections/balloons.js';
 import { mountGame } from './sections/game.js';
+import { mountSky } from './sections/sky.js';
+import { mountScratch } from './sections/scratch.js';
 import { mountWall } from './sections/wall.js';
-import { mountPlaylist } from './sections/playlist.js';
+import { mountFireworks } from './sections/fireworks.js';
 import { mountEnding } from './sections/ending.js';
+import { mountWishJar } from './sections/wishjar.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -79,8 +86,11 @@ async function boot() {
   const intro = mountIntro(app, content);
   mountLetter(app, content);
   mountTimeline(app, content);
+  mountGarden(app, content);
   mountReasons(app, content);
+  mountBouquet(app, content);
   mountCake(app, content);
+  mountBalloons(app, content);
   const afterGame = document.createElement('div');
   afterGame.id = 'after-game';
   afterGame.style.display = 'none';
@@ -90,9 +100,12 @@ async function boot() {
     gsap.from(afterGame, { opacity: 0, duration: 1 });
   });
   app.appendChild(afterGame);
+  mountSky(afterGame, content);
+  mountScratch(afterGame, content);
   mountWall(afterGame, content);
-  mountPlaylist(afterGame, content);
+  mountFireworks(afterGame, content);
   mountEnding(afterGame, content);
+  mountWishJar(afterGame, content);
   setupReveals();
 
   // The lock sits on top of everything.
