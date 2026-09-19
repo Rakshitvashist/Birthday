@@ -4,7 +4,7 @@
 
 export const content = {
   // Her name, exactly how you call her.
-  name: 'Priya',
+  name: 'Kanishka',
   // Her birthday. Used for the page title and the countdown.
   birthday: '2026-10-05',
 
@@ -13,7 +13,7 @@ export const content = {
     question: 'Enter the date we first met',
     hint: 'Think of the day at the coffee shop… (DD-MM-YYYY)',
     // Accepted answers. Any of these unlocks the site. Keep them lowercase.
-    answers: ['14-02-2024', '14/02/2024', '14022024'],
+    answers: ['16-05-2026', '16/05/2026', '16052026'],
     wrongMessages: [
       'Nope. You know this one 😌',
       'Try again, my love.',
@@ -23,7 +23,7 @@ export const content = {
 
   // ---------- Intro ----------
   intro: {
-    lines: ['Happy Birthday', 'Priya'],
+    lines: ['Happy Birthday', 'Kanishka'],
     subtitle: 'I made this for you.',
   },
 
@@ -45,7 +45,7 @@ export const content = {
   timeline: {
     title: 'Our story so far',
     events: [
-      { date: '14 Feb 2024', title: 'The day we met', caption: 'You spilled coffee on my notes and apologised for five minutes straight.', photo: 'photos/1.svg' },
+      { date: '16 May 2026', title: 'The day we met', caption: 'You spilled coffee on my notes and apologised for five minutes straight.', photo: 'photos/1.svg' },
       { date: '02 Mar 2024', title: 'First date', caption: 'We talked so long the restaurant had to ask us to leave.', photo: 'photos/2.svg' },
       { date: '19 Apr 2024', title: 'First trip together', caption: 'You got us lost on purpose. I still think it was on purpose.', photo: 'photos/3.svg' },
       { date: '05 Oct 2024', title: 'Your last birthday', caption: 'The cake was terrible. Your smile was not.', photo: 'photos/4.svg' },
@@ -125,7 +125,7 @@ export const content = {
   // ---------- Sharing ----------
   // Shown in WhatsApp / iMessage link previews.
   share: {
-    title: 'For Priya 💌',
+    title: 'For Kanishka 💌',
     description: 'Open me on your birthday.',
     image: 'photos/1.svg',
   },
