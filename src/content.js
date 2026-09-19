@@ -11,13 +11,13 @@ export const content = {
   // ---------- Lock screen ----------
   lock: {
     question: 'Enter the date we first met',
-    hint: 'Think of the day at the coffee shop… (DD-MM-YYYY)',
+    hint: 'Mera farewell. Rajiv Chowk. Light purple top. (DD-MM-YYYY)',
     // Accepted answers. Any of these unlocks the site. Keep them lowercase.
     answers: ['16-05-2026', '16/05/2026', '16052026'],
     wrongMessages: [
       'Nope. You know this one 😌',
       'Try again, my love.',
-      'Hint: it was raining that day.',
+      'Hint: Citrus Iced Tea, Third Wave.',
     ],
   },
 
@@ -36,12 +36,16 @@ export const content = {
     title: 'A letter, from me to you',
     // Each paragraph types out one after another.
     paragraphs: [
-      'Happy birthday, my love.',
-      'I wanted to give you something that no shop could sell, so I built you this. Every pixel of it is me trying to say what I usually stumble over in words.',
-      'You make ordinary days feel like they were written for us. Thank you for choosing me, every single day.',
-      'Scroll down. I have a few things to show you.',
+      'Happy birthday, Kanishka.',
+      '16 May 2026. Mera college farewell tha, aur mujhe laga tha wo din ek ending hai. Rajiv Chowk metro station, light purple top mein tum, aur Third Wave ki wo table jahan tumne Citrus Iced Tea order ki thi. Hum baatein karte rahe, aur mujhe pata bhi nahi chala ki wo din ending nahi thi. Shuruaat thi.',
+      'Phir hum dobara mile. Thodi si shopping, tumhari Sleepy Owl coffee, aur pehli baar mujhe laga ki main tumhari taraf kheencha ja raha hoon. Bina koshish kiye. Bas.',
+      '27 June. Mera birthday. Tum McDonald\'s mein baithi mera wait kar rahi thi, haath mein red roses aur chocolate. Us din pehli baar laga ki koi mere liye bhi efforts karta hai. Us din maine tumhe pehli baar tight hug kiya tha. Wo hug aaj bhi mere andar kahin rakha hua hai.',
+      'Phir din baat karte karte nikalte gaye, aur main har din tumse thoda aur attach hota gaya. Humari pehli movie, wo saari dates, wo chhoti chhoti cheezein. Meri life ke best moments ki list banaun, toh har line mein tum ho.',
+      'Sach bhi bolunga. Sab kuch perfect nahi tha. Kuch cheezein bigdi, kaafi ladaiyaan hui, aur maine tumhe kai baar hurt kiya, bina chahe. Uske liye main sorry hoon, dil se. Tum us sab ki haqdaar nahi thi.',
+      'Mujhe nahi pata aage cheezein kaisi rahengi. But itna pata hai: tum meri life ka favourite period ho. Aur main chahta hoon ki ye period kabhi khatam na ho.',
+      'Toh is birthday pe meri bas ek wish hai. Jaise tum us din Rajiv Chowk pe milne aayi thi, waise hi har din mere saath rehna. Main efforts karunga, har din, jaise tumne 27 June ko kiye the. Happy birthday, meri favourite insaan.',
     ],
-    signature: '— Forever yours, Rakshit',
+    signature: '— Tumhara, Rakshit',
   },
 
   // ---------- Timeline ----------
@@ -49,11 +53,11 @@ export const content = {
   timeline: {
     title: 'Our story so far',
     events: [
-      { date: '16 May 2026', title: 'The day we met', caption: 'You spilled coffee on my notes and apologised for five minutes straight.', photo: 'media/photos/p10.jpg' },
-      { date: '02 Jun 2026', title: 'First date', caption: 'We talked so long the restaurant had to ask us to leave.', photo: 'media/photos/p16.jpg' },
-      { date: '19 Jun 2026', title: 'First trip together', caption: 'You got us lost on purpose. I still think it was on purpose.', photo: 'media/photos/p07.jpg' },
-      { date: '14 Jul 2026', title: 'The rainy evening', caption: 'One umbrella. Both of us soaked anyway.', photo: 'media/photos/p22.jpg' },
-      { date: '30 Aug 2026', title: 'That late-night call', caption: 'Four hours. Neither of us wanted to hang up first.', photo: 'media/photos/p23.jpg' },
+      { date: '16 May 2026', title: 'The day we met', caption: 'Mera farewell. Rajiv Chowk. Light purple top. Citrus Iced Tea at Third Wave, aur baatein jo khatam hi nahi hui.', photo: 'media/photos/p10.jpg' },
+      { date: 'June 2026', title: 'The shopping day', caption: 'Thodi si shopping, tumhari Sleepy Owl coffee, aur pehli baar main tumhari taraf kheencha gaya.', photo: 'media/photos/p16.jpg' },
+      { date: '27 Jun 2026', title: 'My birthday', caption: 'Tum McD mein red roses aur chocolate ke saath wait kar rahi thi. Humara pehla tight hug.', photo: 'media/photos/p07.jpg' },
+      { date: 'July 2026', title: 'Our first movie', caption: 'Popcorn se zyada main tumhe dekh raha tha.', photo: 'media/photos/p22.jpg' },
+      { date: 'Since then', title: 'Every date after that', caption: 'Har mulaqat ke baad ghar jaake ek hi soch: dobara kab?', photo: 'media/photos/p23.jpg' },
       { date: 'Today', title: 'And now this', caption: 'Another year of you. Lucky me.', photo: 'media/photos/p27.jpg' },
     ],
   },

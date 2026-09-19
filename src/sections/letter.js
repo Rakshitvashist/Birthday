@@ -13,12 +13,17 @@ export function mountLetter(host, content) {
         ${c.paragraphs.map(() => '<p></p>').join('')}
         <div class="sig">${c.signature}</div>
       </div>
+      <p class="lead reveal" style="font-size:0.8rem;margin-top:14px">Tap the letter to read faster</p>
     </div>`;
   host.appendChild(section);
 
   const paras = [...section.querySelectorAll('.paper p')];
   const sig = section.querySelector('.sig');
-  let started = false;
+  const paper = section.querySelector('.paper');
+  let started = false, fast = false;
+
+  // Tapping the paper speeds the typing up so she never has to wait.
+  paper.addEventListener('pointerdown', () => { fast = true; });
 
   async function type() {
     if (started) return;
@@ -31,10 +36,10 @@ export function mountLetter(host, content) {
       p.appendChild(cursor);
       for (const ch of text) {
         cursor.insertAdjacentText('beforebegin', ch);
-        const pause = /[.,!?]/.test(ch) ? 220 : ch === ' ' ? 30 : 28 + Math.random() * 40;
+        const pause = fast ? 4 : /[.!?]/.test(ch) ? 200 : ch === ',' ? 110 : ch === ' ' ? 22 : 18 + Math.random() * 26;
         await new Promise((r) => setTimeout(r, pause));
       }
-      await new Promise((r) => setTimeout(r, 500));
+      await new Promise((r) => setTimeout(r, fast ? 80 : 450));
     }
     cursor.remove();
     gsap.to(sig, { opacity: 1, y: 0, duration: 1.2, ease: 'power2.out' });
