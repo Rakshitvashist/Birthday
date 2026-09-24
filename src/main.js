@@ -21,7 +21,6 @@ import { mountCake } from './sections/cake.js';
 import { mountBalloons } from './sections/balloons.js';
 import { mountGame } from './sections/game.js';
 import { mountSky } from './sections/sky.js';
-import { mountScratch } from './sections/scratch.js';
 import { mountWall } from './sections/wall.js';
 import { mountFireworks } from './sections/fireworks.js';
 import { mountEnding } from './sections/ending.js';
@@ -111,7 +110,6 @@ async function boot() {
   });
   app.appendChild(afterGame);
   mountSky(afterGame, content);
-  mountScratch(afterGame, content);
   mountGallery(afterGame, content);
   mountWall(afterGame, content);
   mountFireworks(afterGame, content);
@@ -126,7 +124,8 @@ async function boot() {
   document.body.classList.remove('locked');
   window.scrollTo(0, 0);
   audio.init(content.audio);
-  soundBtn.classList.add('show');
+  // only offer a sound toggle once a track has actually loaded
+  [audio.bg, audio.song].forEach((a) => a && a.addEventListener('canplay', () => soundBtn.classList.add('show'), { once: true }));
   startHearts();
   intro.play().then(() => audio.playBackground());
   ScrollTrigger.refresh();

@@ -118,7 +118,7 @@ export const content = {
     label: 'kanishka & rakshit',
     videoEvery: 3,        // a video after every N photos
     secondsPerPhoto: 4.5,
-    endMessage: 'And we are only getting started.',
+    endMessage: 'Every one of these, I would live again.',
   },
 
   // ---------- Photo mosaic ----------
@@ -162,7 +162,7 @@ export const content = {
   bouquet: {
     title: 'Build me a bouquet',
     subtitle: 'Drag the flowers into the wrap, or just tap them.',
-    cardMessage: 'Real ones arrive on your birthday. This one never wilts.',
+    cardMessage: 'This one never wilts. Just like the memories.',
   },
 
   // ---------- Cake ----------
@@ -206,15 +206,6 @@ export const content = {
     // Uses the timeline events as the stars.
   },
 
-  // ---------- Scratch card ----------
-  scratch: {
-    title: 'Scratch here',
-    hint: 'Rub it with your finger.',
-    revealTitle: 'Surprise 🎟️',
-    revealText: 'We are going away for the weekend. Pack a bag. Don\'t ask where.',
-    photo: 'media/photos/p03.jpg',
-  },
-
   // ---------- Polaroid wall ----------
   wall: {
     title: 'Our wall',
@@ -231,18 +222,18 @@ export const content = {
   // ---------- Ending ----------
   ending: {
     title: 'One last thing',
-    message: 'Every year with you is my favourite year. Here\'s to this one, and all the ones after it.',
-    question: 'Will you be mine, forever?',
+    message: 'Whatever happens from here, I am grateful for every bit of this chapter. Thank you for being in it.',
+    question: 'Can I stay a part of your story?',
     yes: 'Yes',
     no: 'No',
     // Shown after she taps Yes.
-    afterYes: 'I knew it. Happy birthday, my love. ❤️',
+    afterYes: 'Thank you. Happy birthday, Kanishka. ❤️',
     // Video that plays after she says yes. Put a file in /public/video (e.g. 'video/message.mp4')
     // or paste a YouTube embed link (https://www.youtube.com/embed/VIDEO_ID). Leave '' to skip.
     video: '',
     videoCaption: 'I recorded this for you.',
     // Countdown to the next time you see each other. Leave empty ('') to hide.
-    nextMeet: '2026-10-05T18:00:00',
+    nextMeet: '',
     nextMeetLabel: 'Until I see you',
   },
 
@@ -268,6 +259,6 @@ export const content = {
   share: {
     title: 'For Kanishka 💌',
     description: 'Open me on your birthday.',
-    image: 'media/photos/p27.jpg',
+    image: 'https://rakshitvashist.github.io/Birthday/media/photos/p27.jpg',
   },
 };
