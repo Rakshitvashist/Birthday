@@ -5,3 +5,4 @@ dist
 # raw media sources (processed copies live in public/media)
 Image/
 Video/
+child_phots/

@@ -53,6 +53,46 @@
 .gallery .m-video span { position: absolute; inset: 0; display: grid; place-items: center; font-size: 34px; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.8); background: rgba(0,0,0,0.15); }
 .gallery .m-video small { position: absolute; right: 8px; bottom: 6px; font-size: 0.7rem; font-family: var(--sans); background: rgba(0,0,0,0.55); padding: 2px 6px; border-radius: 999px; }
 
+/* ---------- childhood ---------- */
+.childhood .film {
+  position: relative; width: 100vw; max-width: 600px; margin: 10px auto 0; left: 50%; transform: translateX(-50%);
+  background: #14100f; padding: 14px 0; border-top: 1px solid #2a2320; border-bottom: 1px solid #2a2320;
+}
+.childhood .film-holes {
+  height: 14px; margin: 0 8px;
+  background-image: radial-gradient(rgba(255,255,255,0.0) 0, transparent 0), repeating-linear-gradient(90deg, transparent 0 10px, #f5efe6 10px 22px, transparent 22px 32px);
+  background-size: 100% 100%; border-radius: 2px; opacity: 0.85;
+}
+.childhood .film-holes { background: repeating-linear-gradient(90deg, transparent 0 12px, #f4ecdf 12px 24px, transparent 24px 34px); height: 10px; margin: 0 10px; border-radius: 2px; }
+.childhood .film-track {
+  display: flex; gap: 14px; overflow-x: auto; padding: 14px 18px; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch;
+}
+.childhood .film-track::-webkit-scrollbar { display: none; }
+.childhood .film-frame { flex: 0 0 220px; margin: 0; scroll-snap-align: center; cursor: pointer; }
+.childhood .print {
+  padding: 10px 10px 14px; background: #fbf6ec; border-radius: 3px; box-shadow: 0 10px 24px rgba(0,0,0,0.5);
+}
+.childhood .print img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; filter: sepia(0.35) contrast(0.95) saturate(0.85); border-radius: 2px; }
+.childhood figcaption { font-family: var(--hand); color: var(--ink-dim); font-size: 1.2rem; margin-top: 8px; text-align: center; min-height: 1.4em; }
+.childhood .then-now {
+  position: relative; width: 100%; max-width: 320px; aspect-ratio: 4 / 5; margin: 34px auto 0; border-radius: 18px; overflow: hidden;
+  border: 1px solid var(--card-border); box-shadow: 0 24px 50px rgba(0,0,0,0.5); touch-action: pan-y; user-select: none; cursor: ew-resize;
+}
+.childhood .tn-now, .childhood .tn-then { position: absolute; inset: 0; }
+.childhood .tn-now img, .childhood .tn-then img { width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
+.childhood .tn-then { clip-path: inset(0 50% 0 0); }
+.childhood .tn-then img { filter: sepia(0.3) saturate(0.9); }
+.childhood .tn-handle { position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background: #fff; transform: translateX(-50%); box-shadow: 0 0 12px rgba(0,0,0,0.6); pointer-events: none; }
+.childhood .tn-handle i {
+  position: absolute; top: 50%; left: 50%; width: 38px; height: 38px; border-radius: 50%; background: #fff; transform: translate(-50%, -50%);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.5); display: grid; place-items: center;
+}
+.childhood .tn-handle i::before { content: '\2039\203A'; color: #2a1a20; font-size: 20px; letter-spacing: 2px; font-family: serif; }
+.childhood .tn-label { position: absolute; top: 12px; z-index: 2; font-family: var(--hand); font-size: 1.3rem; padding: 2px 12px; border-radius: 999px; background: rgba(0,0,0,0.5); color: #fff; pointer-events: none; }
+.childhood .tn-label.left { left: 12px; }
+.childhood .tn-label.right { right: 12px; }
+.childhood .child-message { font-family: var(--hand); font-size: 1.9rem; color: var(--rose-2); margin-top: 30px; opacity: 0; }
+
 /* ---------- photo rain (ending) ---------- */
 .photo-rain { position: fixed; inset: 0; pointer-events: none; z-index: 30; overflow: hidden; }
 .photo-rain img { position: absolute; top: -120px; width: 64px; height: 64px; object-fit: cover; border-radius: 6px; border: 3px solid #fff; box-shadow: 0 8px 20px rgba(0,0,0,0.5); }

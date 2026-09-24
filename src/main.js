@@ -8,6 +8,7 @@ import { audio } from './audio.js';
 import { mountLock } from './sections/lock.js';
 import { mountIntro } from './sections/intro.js';
 import { mountLetter } from './sections/letter.js';
+import { mountChildhood } from './sections/childhood.js';
 import { mountTimeline } from './sections/timeline.js';
 import { mountYou } from './sections/you.js';
 import { mountStories } from './sections/stories.js';
@@ -90,6 +91,7 @@ async function boot() {
   // Build every section up front (hidden behind the lock) so scroll layout is ready.
   const intro = mountIntro(app, content);
   mountLetter(app, content);
+  mountChildhood(app, content);
   mountTimeline(app, content);
   mountYou(app, content);
   mountStories(app, content);

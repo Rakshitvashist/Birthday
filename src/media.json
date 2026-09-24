@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-19T18:30:39.240Z",
+  "generated": "2026-09-24T15:53:08.831Z",
   "photos": [
     {
       "id": "p01",
@@ -323,6 +323,81 @@
       "h": 960,
       "portrait": false,
       "color": "rgb(72,88,104)",
+      "caption": ""
+    }
+  ],
+  "childhood": [
+    {
+      "id": "c01",
+      "type": "photo",
+      "source": "WhatsApp Image 2026-09-23 at 11.32.32 AM.jpeg",
+      "src": "media/child/c01.jpg",
+      "thumb": "media/child/thumbs/c01.jpg",
+      "w": 960,
+      "h": 1280,
+      "portrait": true,
+      "color": "rgb(216,216,216)",
+      "caption": "",
+      "rotate": 90
+    },
+    {
+      "id": "c02",
+      "type": "photo",
+      "source": "WhatsApp Image 2026-09-23 at 11.32.48 AM.jpeg",
+      "src": "media/child/c02.jpg",
+      "thumb": "media/child/thumbs/c02.jpg",
+      "w": 960,
+      "h": 1280,
+      "portrait": true,
+      "color": "rgb(248,248,248)",
+      "caption": ""
+    },
+    {
+      "id": "c03",
+      "type": "photo",
+      "source": "WhatsApp Image 2026-09-23 at 11.33.53 AM (1).jpeg",
+      "src": "media/child/c03.jpg",
+      "thumb": "media/child/thumbs/c03.jpg",
+      "w": 1280,
+      "h": 960,
+      "portrait": false,
+      "color": "rgb(8,8,8)",
+      "caption": ""
+    },
+    {
+      "id": "c04",
+      "type": "photo",
+      "source": "WhatsApp Image 2026-09-23 at 11.33.53 AM.jpeg",
+      "src": "media/child/c04.jpg",
+      "thumb": "media/child/thumbs/c04.jpg",
+      "w": 1280,
+      "h": 960,
+      "portrait": false,
+      "color": "rgb(248,248,248)",
+      "caption": ""
+    },
+    {
+      "id": "c05",
+      "type": "photo",
+      "source": "WhatsApp Image 2026-09-23 at 11.34.09 AM.jpeg",
+      "src": "media/child/c05.jpg",
+      "thumb": "media/child/thumbs/c05.jpg",
+      "w": 1280,
+      "h": 960,
+      "portrait": false,
+      "color": "rgb(8,8,8)",
+      "caption": ""
+    },
+    {
+      "id": "c06",
+      "type": "photo",
+      "source": "WhatsApp Image 2026-09-23 at 11.34.33 AM.jpeg",
+      "src": "media/child/c06.jpg",
+      "thumb": "media/child/thumbs/c06.jpg",
+      "w": 576,
+      "h": 1280,
+      "portrait": true,
+      "color": "rgb(136,136,136)",
       "caption": ""
     }
   ],

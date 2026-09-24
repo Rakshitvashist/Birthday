@@ -3,11 +3,12 @@ import data from './media.json';
 
 export const photos = data.photos;
 export const videos = data.videos;
+export const childhood = data.childhood || [];
 export const portraits = photos.filter((p) => p.portrait);
 export const landscapes = photos.filter((p) => !p.portrait);
 
 export function byId(id) {
-  return photos.find((p) => p.id === id) || videos.find((v) => v.id === id) || null;
+  return photos.find((p) => p.id === id) || videos.find((v) => v.id === id) || childhood.find((p) => p.id === id) || null;
 }
 
 // A content entry can name a photo by id ("p07") or give a path. Both resolve to a URL.

@@ -70,6 +70,20 @@ export const content = {
     signature: '— Rakshit',
   },
 
+  // ---------- Childhood ----------
+  // Photos come from /child_phots via `npm run media` (ids c01, c02, ...).
+  childhood: {
+    title: 'Before I knew you',
+    subtitle: 'Little Kanishka.',
+    // One line under each childhood photo, in order. Leave '' to show nothing.
+    captions: ['Same eyes.', 'India Gate, tiny you.', 'You, in the middle of everything.', 'The pink sweater era.', 'Big sister energy.', 'That look. Already.'],
+    then: 'c05',   // childhood photo for the "then / now" slider
+    thenFocus: '45% 30%',  // which part of that photo to keep (left/right, up/down), so her face stays in frame
+    now: 'p14',    // photo of her now for the slider
+    nowFocus: '50% 40%',
+    message: 'I would have recognised you anywhere.',
+  },
+
   // ---------- Timeline ----------
   // Put photos in /public/photos and reference them by filename.
   timeline: {
