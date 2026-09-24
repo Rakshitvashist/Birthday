@@ -13,10 +13,10 @@ export function mountTimeline(host, content) {
       <div class="track">
         ${c.events.map((e) => `
           <article class="tl-item">
-            <div class="date">${e.date}</div>
-            <h3>${e.title}</h3>
-            <div class="frame"><img src="${e.photo}" alt="${e.title}" loading="lazy" /></div>
-            <p class="cap">${e.caption}</p>
+            ${e.date ? `<div class="date">${e.date}</div>` : ''}
+            ${e.title ? `<h3>${e.title}</h3>` : ''}
+            <div class="frame"><img src="${e.photo}" alt="" loading="lazy" /></div>
+            ${e.caption ? `<p class="cap">${e.caption}</p>` : ''}
           </article>`).join('')}
       </div>
     </div>`;

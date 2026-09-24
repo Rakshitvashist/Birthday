@@ -12,6 +12,7 @@ export function mountSky(host, content) {
       <h2 class="reveal">${c.subtitle}</h2>
       <div class="sky-canvas-wrap reveal">
         <canvas></canvas>
+        <div class="star-photo" hidden><img alt="" /></div>
         <div class="star-tip" hidden><b></b><span></span></div>
       </div>
       <p class="sky-message">${c.message}</p>
@@ -107,7 +108,7 @@ export function mountSky(host, content) {
       const L = on ? 12 : 7;
       ctx.beginPath(); ctx.moveTo(s.x - L, s.y); ctx.lineTo(s.x + L, s.y); ctx.moveTo(s.x, s.y - L); ctx.lineTo(s.x, s.y + L); ctx.stroke();
       ctx.shadowBlur = 0;
-      if (on) {
+      if (on && s.e.date) {
         ctx.fillStyle = 'rgba(255,255,255,0.7)';
         ctx.font = '12px Caveat, cursive';
         ctx.textAlign = 'center';
@@ -118,14 +119,29 @@ export function mountSky(host, content) {
   }
 
   function showTip(s) {
-    tip.querySelector('b').textContent = s.e.title;
-    tip.querySelector('span').textContent = s.e.date;
+    if (!s.e.title && !s.e.date) return; // photo-only memories: no label to show
+    tip.querySelector('b').textContent = s.e.title || '';
+    tip.querySelector('span').textContent = s.e.date || '';
     tip.hidden = false;
     tip.style.left = Math.max(70, Math.min(W - 70, s.x)) + 'px';
     tip.style.top = s.y - 16 + 'px';
     gsap.fromTo(tip, { opacity: 0, y: 6 }, { opacity: 1, y: 0, duration: 0.3 });
     clearTimeout(showTip.t);
     showTip.t = setTimeout(() => gsap.to(tip, { opacity: 0, duration: 0.4, onComplete: () => { tip.hidden = true; } }), 2600);
+  }
+
+  // a small photo pops up beside the star she tapped
+  const photoTip = section.querySelector('.star-photo');
+  function showPhoto(s) {
+    if (!s.e.photo) return;
+    photoTip.querySelector('img').src = s.e.photo;
+    photoTip.hidden = false;
+    photoTip.style.left = Math.max(60, Math.min(W - 60, s.x)) + 'px';
+    photoTip.style.top = (s.y > H / 2 ? s.y - 34 : s.y + 34) + 'px';
+    photoTip.style.transform = s.y > H / 2 ? 'translate(-50%, -100%)' : 'translate(-50%, 0)';
+    gsap.fromTo(photoTip, { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.35, ease: 'back.out(1.6)' });
+    clearTimeout(showPhoto.t);
+    showPhoto.t = setTimeout(() => gsap.to(photoTip, { opacity: 0, duration: 0.4, onComplete: () => { photoTip.hidden = true; } }), 2600);
   }
 
   canvas.addEventListener('pointerdown', (e) => {
@@ -135,6 +151,7 @@ export function mountSky(host, content) {
     if (!hit) return;
     lit.add(hit.i);
     showTip(hit);
+    showPhoto(hit);
     if (lit.size === stars.length && !completed) {
       completed = true;
       completedAt = performance.now();

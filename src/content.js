@@ -88,13 +88,14 @@ export const content = {
   // Put photos in /public/photos and reference them by filename.
   timeline: {
     title: 'Our story so far',
+    // Photos only. Add date: '', title: '' or caption: '' to an entry if you ever want text back.
     events: [
-      { date: '16 May 2026', title: 'The day we met', caption: 'Mera farewell. Rajiv Chowk. Light purple top. Citrus Iced Tea at Third Wave, aur baatein jo khatam hi nahi hui.', photo: 'media/photos/p10.jpg' },
-      { date: 'June 2026', title: 'The shopping day', caption: 'Thodi si shopping, tumhari Sleepy Owl coffee, aur pehli baar main tumhari taraf kheencha gaya.', photo: 'media/photos/p16.jpg' },
-      { date: '27 Jun 2026', title: 'My birthday', caption: 'Tum McD mein red roses aur chocolate ke saath wait kar rahi thi. Humara pehla tight hug.', photo: 'media/photos/p07.jpg' },
-      { date: 'July 2026', title: 'Our first movie', caption: 'Popcorn se zyada main tumhe dekh raha tha.', photo: 'media/photos/p22.jpg' },
-      { date: 'Since then', title: 'Every date after that', caption: 'Har mulaqat ke baad ghar jaake ek hi soch: dobara kab?', photo: 'media/photos/p23.jpg' },
-      { date: 'Today', title: 'And now this', caption: 'Another year of you. Lucky me.', photo: 'media/photos/p27.jpg' },
+      { photo: 'media/photos/p10.jpg' },
+      { photo: 'media/photos/p16.jpg' },
+      { photo: 'media/photos/p07.jpg' },
+      { photo: 'media/photos/p22.jpg' },
+      { photo: 'media/photos/p23.jpg' },
+      { photo: 'media/photos/p27.jpg' },
     ],
   },
 
@@ -143,16 +144,17 @@ export const content = {
 
   // ---------- Reasons ----------
   reasons: {
-    title: 'Reasons I love you',
+    title: 'What I remember most',
+    // Every line here is from the letter.
     list: [
-      'The way you laugh at your own jokes before you finish them.',
-      'You remember the smallest things I say and bring them up months later.',
-      'You steal my hoodies and look better in them than I ever did.',
-      'Your voice when you are sleepy.',
-      'You believe in me on the days I forget to.',
-      'You dance in the kitchen like nobody is watching. I am always watching.',
-      'The way you say my name when you are annoyed at me.',
-      'You make every place feel like home.',
+      'The way we used to talk about absolutely anything.',
+      'The way a normal day could become special just because I was with you.',
+      'The feeling of having someone I genuinely wanted to share things with.',
+      'The way being around you started feeling different.',
+      'Someone thinking about me, planning something for me, doing something just to make me happy.',
+      'The coffees, the walks, the stupid conversations, the laughs.',
+      "You made me feel things I hadn't felt in a long time.",
+      'You taught me a lot about love, effort, attachment, mistakes and understanding.',
     ],
   },
 
@@ -176,13 +178,14 @@ export const content = {
   balloons: {
     title: 'Pop them',
     subtitle: 'Every balloon is carrying a little note for you.',
+    // Every note here is from the letter.
     notes: [
-      'You are the best part of my every day.',
-      'I still get nervous before I see you. In a good way.',
-      'Nobody has ever made me laugh like you do.',
-      'I saved your first message. I read it more than I should.',
-      'You are braver than you think. I see it every day.',
-      'I would choose you in every version of this life.',
+      'I remember the girl in that light purple top at my college farewell.',
+      'I remember the Citrus Iced Tea at Rajiv Chowk.',
+      'I remember the Sleepy Owl coffee.',
+      "I remember the red roses and chocolates at McDonald's.",
+      'I remember our first hug, our first movie, our random dates.',
+      'I hope this year is kinder to you.',
     ],
     doneMessage: 'That was all of them. For now.',
   },

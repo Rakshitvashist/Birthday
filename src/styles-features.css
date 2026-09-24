@@ -99,6 +99,9 @@
 .sky .star-tip[hidden] { display: none; }
 .sky .star-tip b { display: block; font-family: var(--serif); font-size: 1.05rem; }
 .sky .star-tip span { font-family: var(--hand); color: #b5175a; }
+.sky .star-photo { position: absolute; width: 96px; height: 96px; border-radius: 12px; overflow: hidden; border: 3px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.6); pointer-events: none; }
+.sky .star-photo[hidden] { display: none; }
+.sky .star-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .sky .sky-message { font-family: var(--hand); font-size: 2rem; color: var(--rose-2); margin-top: 22px; opacity: 0; }
 
 /* ---------- scratch ---------- */
